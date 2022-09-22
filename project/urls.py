@@ -19,7 +19,7 @@ from web.views import home,create,store,painel, dologin, dashboard, logouts, cha
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
-    path('create/', create),
+    path('create/', create), #criar usuario
     path('store/', store),
     path('painel/', painel),
     path('dologin/', dologin),
