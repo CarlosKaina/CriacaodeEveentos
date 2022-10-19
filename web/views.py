@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
+from django.views.decorators.csrf import csrf_exempt
 
 # Pagina incial.
 def home(request):
@@ -12,6 +13,9 @@ def create(request):
     return render(request,'create.html')
 
 #Pagina de store
+@csrf_exempt
+def teste(request):
+    return JsonResponse({'alo': 'opa'})
 def store(request):
     data = {}
     if(request.POST['password'] != request.POST['password-conf']):
